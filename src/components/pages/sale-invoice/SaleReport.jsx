@@ -47,15 +47,19 @@ const SaleReport = () => {
 
           </div>
           <div className="flex items-center gap-2">
+           <Link href="/purchase/add-purchase">
             <Button variant="outline">
               <i className="ri-calendar-line" />
               Date Range
             </Button>
+           </Link>
 
+           <Link href="/purchase/add-purchase">
             <Button variant="tertiary">
               <i className="ri-download-2-line" />
               Export
             </Button>
+           </Link>
 
             <Link href="/sale-invoice/sale-report/add-invoice">
               <Button variant="danger">

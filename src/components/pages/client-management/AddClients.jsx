@@ -3,6 +3,7 @@ import React from "react";
 import Heading from "@/components/atoms/Heading";
 import Input from "@/components/common/Input";
 import Button from "@/components/common/Button";
+import Link from "next/link";
 
 const AddClients = () => {
   return (
@@ -133,9 +134,11 @@ const AddClients = () => {
           <Button variant="outline">
             <i className="ri-close-line" /> Cancel
           </Button>
+          <Link href="/client-management/clients-details">
           <Button variant="danger">
             <i className="ri-user-add-line" /> Add Client
           </Button>
+          </Link>
         </div>
       </div>
     </div>

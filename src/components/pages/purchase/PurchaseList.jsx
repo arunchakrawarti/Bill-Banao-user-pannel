@@ -5,6 +5,7 @@ import BasicTable from "@/components/common/BasicTable";
 import { purchaseColumns, purchaseData } from "../../../config/purchase";
 import Button from "@/components/common/Button";
 import Input from "@/components/common/Input";
+import Link from "next/link";
 
 const columns = purchaseColumns.map((col) => {
   if (["amount", "paid", "cost", "taxable", "gst", "sgst"].includes(col.key)) {
@@ -64,20 +65,26 @@ const PurchaseList = () => {
 
           {/* Buttons */}
           <div className="flex flex-wrap items-center gap-2 justify-start lg:justify-end">
+            <Link href="/purchase/add-purchase">
             <Button variant="outline" className="w-full sm:w-auto">
               <i className="ri-calendar-line" />
               <span className="ml-2">Date Range</span>
             </Button>
+            </Link>
 
+            <Link href="/purchase/add-purchase">
             <Button variant="tertiary" className="w-full sm:w-auto">
               <i className="ri-download-2-line" />
               <span className="ml-2">Export</span>
             </Button>
+            </Link>
 
+           <Link href="/purchase/add-purchase">
             <Button variant="danger" className="w-full sm:w-auto">
               <i className="ri-add-line" />
               <span className="ml-2">New Invoice</span>
             </Button>
+           </Link>
           </div>
         </div>
 
