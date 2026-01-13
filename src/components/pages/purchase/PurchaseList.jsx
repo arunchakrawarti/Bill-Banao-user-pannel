@@ -30,7 +30,7 @@ const columns = purchaseColumns.map((col) => {
 
 const PurchaseList = () => {
   return (
-    <div className=" mt-7">
+    <div className="mt-6 px-3 sm:px-6">
       <Heading
         title="Clients Details"
         paragraph="Manage and view all your client information"
@@ -39,54 +39,58 @@ const PurchaseList = () => {
             text: "Download",
             variant: "outline",
             icon: <i className="ri-download-line" />,
-            onClick: () => console.log("Download"),
           },
           {
             text: "Import Clients",
             variant: "danger",
             icon: <i className="ri-upload-2-line" />,
-            onClick: () => console.log("Import"),
           },
         ]}
       />
 
-      <div className="mt-7 overflow-x-auto">
-        <div className="flex rounded-t-2xl border border-gray-200 items-center justify-between bg-white p-4 gap-3 ">
-
-          <div className="relative w-full max-w-sm">
+      <div className="mt-6">
+        {/* Top Bar */}
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 rounded-t-2xl border border-gray-200 bg-white p-4">
+          
+          {/* Search */}
+          <div className="w-full lg:max-w-sm">
             <Input
               type="text"
               icon="ri-search-line"
               placeholder="Search invoices..."
-              className="w-full rounded-lg border border-gray-200 px-4 py-2 text-sm focus:border-indigo-500 h-11 focus:ring-indigo-500"
+              className="w-full rounded-lg border border-gray-200 px-4 py-2 text-sm h-11 focus:border-indigo-500 focus:ring-indigo-500"
             />
-
           </div>
-          <div className="flex items-center gap-2">
-            <Button variant="outline">
+
+          {/* Buttons */}
+          <div className="flex flex-wrap items-center gap-2 justify-start lg:justify-end">
+            <Button variant="outline" className="w-full sm:w-auto">
               <i className="ri-calendar-line" />
-              Date Range
+              <span className="ml-2">Date Range</span>
             </Button>
 
-            <Button variant="tertiary">
+            <Button variant="tertiary" className="w-full sm:w-auto">
               <i className="ri-download-2-line" />
-              Export
-            </Button>
-            <Button variant="danger">
-              <i className="ri-add-line" />
-              New Invoice
+              <span className="ml-2">Export</span>
             </Button>
 
+            <Button variant="danger" className="w-full sm:w-auto">
+              <i className="ri-add-line" />
+              <span className="ml-2">New Invoice</span>
+            </Button>
           </div>
         </div>
-        <BasicTable
-          columns={columns}
-          data={purchaseData}
-          wrapperClassName="rounded-b-2xl rounded-t-none  "
-          pagination
-          total={purchaseData.length}
-        />
 
+        {/* Table */}
+        <div className="w-full overflow-x-auto">
+          <BasicTable
+            columns={columns}
+            data={purchaseData}
+            wrapperClassName="rounded-b-2xl rounded-t-none min-w-[900px]"
+            pagination
+            total={purchaseData.length}
+          />
+        </div>
       </div>
     </div>
   );

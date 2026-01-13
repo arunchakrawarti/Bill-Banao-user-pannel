@@ -5,16 +5,16 @@ import Button from "@/components/common/Button";
 
 export default function AddPurchase() {
   return (
-    <div className="space-y-6 mt-7">
+    <div className="mt-7 space-y-6">
 
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <Heading
           title="Add New Purchase Order"
           paragraph="Fill in the details to add a purchase order"
         />
 
-        <div className="w-[220px]">
+        <div className="w-full sm:w-[220px]">
           <Input
             type="select"
             placeholder="Select One"
@@ -26,10 +26,10 @@ export default function AddPurchase() {
       </div>
 
       {/* Card */}
-      <div className="bg-white p-6 rounded-2xl border border-gray-200">
+      <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-200">
 
         {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <Input label="Purchase ID" placeholder="Purchase ID" className="border border-gray-200" icon="none" />
           <Input label="Select Vendor" placeholder="Select Vendor" defaultValue="INV-2024-009" className="border border-gray-200" icon="none" />
           <Input label="Reference" placeholder="Reference" className="border border-gray-200" icon="none" />
@@ -58,7 +58,13 @@ export default function AddPurchase() {
             className="border border-gray-200"
             icon="none"
           />
-          <Input label="Supplier Invoice S.No" placeholder="Invoice Number" defaultValue="INV-2024-009" className="border border-gray-200" icon="none" />
+          <Input
+            label="Supplier Invoice S.No"
+            placeholder="Invoice Number"
+            defaultValue="INV-2024-009"
+            className="border border-gray-200"
+            icon="none"
+          />
           <Input
             label="Payment Status"
             type="select"
@@ -84,7 +90,7 @@ export default function AddPurchase() {
         <div className="mt-6">
           <label className="block text-sm mb-2">Attachment</label>
 
-          <div className="border-2 border-gray-300 rounded-xl p-8 flex flex-col items-center justify-center text-center gap-2">
+          <div className="border-2  border-gray-300 rounded-xl p-6 sm:p-8 flex flex-col items-center justify-center text-center gap-2">
             <div className="w-12 h-12 flex items-center justify-center rounded-full bg-indigo-50 text-indigo-600">
               <i className="ri-upload-cloud-2-line text-2xl" />
             </div>
@@ -99,34 +105,34 @@ export default function AddPurchase() {
             </p>
           </div>
 
-          {/* Buttons */}
-          <div className="flex items-center justify-between mt-4">
-             <div className="mt-6 flex items-center max-w-md gap-4 rounded-xl border border-gray-200 bg-white p-2">
-        <div className="gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50">
-            <i className="ri-camera-line text-2xl" />
-          </div>
-          <h2 className="font-semibold flex items-center gap-2">
-            Upload a New Photo
-          </h2>
-        </div>
+          {/* Bottom Actions */}
+          <div className="mt-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
 
-        <div className="flex gap-2">
-          <Button variant="danger">
-            Upload
-          </Button>
-          <Button variant="secondary">
-            Remove
-          </Button>
-        </div>
-      </div>
+            {/* Upload Box */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 w-full lg:max-w-md">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50">
+                  <i className="ri-camera-line text-2xl" />
+                </div>
+                <h2 className="font-semibold">Upload a New Photo</h2>
+              </div>
 
-            <div className="flex gap-3">
-              <Button variant="outline">Cancel</Button>
-              <Button variant="danger">
+              <div className="flex gap-2 sm:ml-auto">
+                <Button variant="danger">Upload</Button>
+                <Button variant="secondary">Remove</Button>
+              </div>
+            </div>
+
+            {/* Form Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+              <Button variant="outline" className="w-full sm:w-auto">
+                Cancel
+              </Button>
+              <Button variant="danger" className="w-full sm:w-auto">
                 Add Expenses
               </Button>
             </div>
+
           </div>
         </div>
 

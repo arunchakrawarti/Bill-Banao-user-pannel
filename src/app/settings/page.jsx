@@ -1,5 +1,4 @@
 import Information from '@/components/pages/settings/Information'
-import MainCalculator from '@/components/pages/tax-calculation/Index'
 import MainLayout from '@/components/templates/MainLayout'
 import React from 'react'
 
@@ -7,7 +6,7 @@ const page = () => {
     return (
         <div>
             <MainLayout>
-                <MainCalculator/>
+                <Information/>
             </MainLayout>
         </div>
     )
