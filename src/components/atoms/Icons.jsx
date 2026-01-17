@@ -32,7 +32,7 @@ export const InvoiceAction = ({ row }) => {
   const router = useRouter();
   return (
     <button
-      onClick={() => router.push(`/clients/${row.id}/invoice`)}
+      onClick={() => router.push(``)}
       className="flex items-center gap-1 text-emerald-600 bg-emerald-50 rounded-full hover:text-emerald-700 px-2"
       title="Add Invoice"
     >
