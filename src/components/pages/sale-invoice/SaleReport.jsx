@@ -15,13 +15,16 @@ import Link from "next/link";
 
 const SaleReport = () => {
   return (
-    <div>
+    <div className=" mt-6 space-y-6">
+
+      {/* Heading */}
       <Heading
         title="Invoice List"
         paragraph="View and manage all your invoices"
       />
 
-      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-6">
+      {/* Stats Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 mt-4">
         {saleReportStats.map((item, i) => (
           <StatsCard
             key={i}
@@ -34,51 +37,59 @@ const SaleReport = () => {
         ))}
       </div>
 
-      <div className="mt-6">
-        <div className="flex flex-wrap rounded-t-2xl border border-gray-200 items-center justify-between bg-white p-4 gap-3 ">
+      {/* Search + Action Buttons */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mt-6 rounded-t-2xl border border-gray-200 bg-white p-4">
+        
+        {/* Search */}
+        <div className="w-full sm:max-w-sm">
+          <Input
+            type="text"
+            icon="ri-search-line"
+            placeholder="Search invoices..."
+            className="w-full rounded-lg border border-gray-200 px-4 py-2 text-sm focus:border-indigo-500 h-11 focus:ring-indigo-500"
+          />
+        </div>
 
-          <div className="relative w-full max-w-sm">
-            <Input
-              type="text"
-              icon="ri-search-line"
-              placeholder="Search invoices..."
-              className="w-full rounded-lg border border-gray-200 px-4 py-2 text-sm focus:border-indigo-500 h-11 focus:ring-indigo-500"
-            />
-
-          </div>
-          <div className="flex items-center gap-2">
-           <Link href="/purchase/add-purchase">
-            <Button variant="outline">
+        {/* Buttons */}
+        <div className="flex flex-wrap gap-2 mt-2 sm:mt-0">
+          <Link href="/purchase/add-purchase">
+            <Button variant="outline" className="w-full sm:w-auto   flex items-center justify-center gap-2">
               <i className="ri-calendar-line" />
               Date Range
             </Button>
-           </Link>
+          </Link>
 
-           <Link href="/purchase/add-purchase">
-            <Button variant="tertiary">
+          <Link href="/purchase/add-purchase">
+            <Button variant="tertiary" className="w-full sm:w-auto flex items-center justify-center gap-2">
               <i className="ri-download-2-line" />
               Export
             </Button>
-           </Link>
+          </Link>
 
-            <Link href="/sale-invoice/sale-report/add-invoice">
-              <Button variant="danger">
-                <i className="ri-add-line" />
-                New Invoice
-              </Button>
-            </Link>
-          </div>
+          <Link href="/sale-invoice/sale-report/add-invoice">
+            <Button variant="danger" className="w-full sm:w-auto flex items-center justify-center gap-2">
+              <i className="ri-add-line" />
+              New Invoice
+            </Button>
+          </Link>
         </div>
-        <BasicTable
-          columns={clientInvoiceColumns}
-          data={clientInvoiceData}
-          actions={clientInvoiceActions}
-          wrapperClassName=""
-          pagination
-          pageSize={5}
-          total={20}
-        />
       </div>
+
+      {/* Table */}
+      <div className="overflow-x-auto rounded-xl border border-gray-200">
+        <div className="min-w-[700px]">
+          <BasicTable
+            columns={clientInvoiceColumns}
+            data={clientInvoiceData}
+            actions={clientInvoiceActions}
+            wrapperClassName=""
+            pagination
+            pageSize={5}
+            total={20}
+          />
+        </div>
+      </div>
+
     </div>
   );
 };
