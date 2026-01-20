@@ -31,7 +31,7 @@ const columns = purchaseColumns.map((col) => {
 
 const PurchaseList = () => {
   return (
-    <div className="mt-6 px-3 sm:px-6">
+    <div className="mt-6">
       <Heading
         title="Clients Details"
         paragraph="Manage and view all your client information"
