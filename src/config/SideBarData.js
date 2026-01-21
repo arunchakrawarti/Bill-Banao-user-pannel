@@ -36,19 +36,19 @@ export const SideBarData = [
       },
       {
         label: "Sale",
-        route: "",
+        route: "/sale-invoice/sale",
       },
       {
         label: "E-Invoice",
-        route: "",
+        route: "/sale-invoice/e-invoice",
       },
       {
         label: "Sale return",
-        route: "",
+        route: "/sale-invoice/sale-return",
       },
       {
         label: "Eway Bill",
-        route: "",
+        route: "/sale-invoice/eway-bill",
       },
     ],
   },
@@ -64,11 +64,11 @@ export const SideBarData = [
       },
       {
         label: "Purchase Return",
-        route: "",
+        route: "/purchase/purchase-return",
       },
       {
         label: "Purchase Order",
-        route: "",
+        route: "/purchase/purchase-order",
       },
       {
         label: "Add Purchase",
