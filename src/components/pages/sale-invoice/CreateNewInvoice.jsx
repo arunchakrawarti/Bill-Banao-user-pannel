@@ -1,5 +1,4 @@
 "use client";
-
 import Heading from "@/components/atoms/Heading";
 import Input from "@/components/common/Input";
 import BasicTable from "@/components/common/BasicTable";

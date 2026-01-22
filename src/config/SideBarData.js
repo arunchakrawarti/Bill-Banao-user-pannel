@@ -23,7 +23,7 @@ export const SideBarData = [
   {
     label: "Invoices",
     heroIcon: "ri-coin-line",
-    route: "/sale-invoice",
+    route: "/invoice",
     hasChildren: true,
     subMenu: [
       {

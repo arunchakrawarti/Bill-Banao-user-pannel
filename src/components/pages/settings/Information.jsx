@@ -23,10 +23,10 @@ const Information = () => {
         </div>
 
         <div className="flex gap-2">
-          <Button className="rounded-md bg-blue-600 px-4 py-2 text-sm text-white">
+          <Button variant="danger">
             Upload
           </Button>
-          <Button className="rounded-md border border-red-500 px-4 bg-white py-2 text-sm text-red-500">
+          <Button variant="secondary">
             Remove
           </Button>
         </div>
@@ -127,17 +127,17 @@ const Information = () => {
         <div className="mt-4 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 items-end">
           <Input label="Branch Name" icon="ri-git-branch-line" placeholder="Enter branch name" className="border border-gray-400"/>
 
-          <Button className="flex h-[45px] items-center gap-2 rounded-lg bg-red-500 px-5 text-sm text-white hover:bg-red-600">
+          <Button className="flex h-[53px] items-center gap-2 rounded-lg bg-red-500 px-5 text-sm text-white hover:bg-red-600">
             <i className="ri-add-line" /> Add Bank
           </Button>
         </div>
 
         <div className="mt-10 flex justify-end gap-3">
-          <Button className="flex items-center gap-2 rounded-md border px-6 py-2 text-sm">
+          <Button variant="default">
             <i className="ri-close-line" /> Cancel
           </Button>
           <Link href="/client-management/clients-details">
-          <Button className="flex items-center gap-2 rounded-md bg-blue-600 px-6 py-2 text-sm text-white">
+          <Button variant="danger">
             <i className="ri-user-add-line" /> Add Client
           </Button>
           </Link>

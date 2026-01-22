@@ -8,7 +8,9 @@ const variantClasses = {
   success: "text-blue-500 border border-blue-500",
   danger: "bg-blue-500 text-white",
   secondary:"bg-white text-red-500 border border-red-500",
-  tertiary:"bg-green-600 text-white"
+  tertiary:"bg-green-600 text-white",
+  
+
 };
 
 function Button({

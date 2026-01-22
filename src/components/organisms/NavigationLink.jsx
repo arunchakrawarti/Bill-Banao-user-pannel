@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const NavigationLink = ({
   label,
@@ -13,9 +13,16 @@ const NavigationLink = ({
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const isActive =
-    pathname === route ||
-    subMenu.some((item) => pathname === item.route);
+  const isParentActive = pathname === route;
+  const isChildActive = subMenu.some(
+    (item) => pathname === item.route
+  );
+  
+  useEffect(() => {
+    if (isChildActive) {
+      setOpen(true);
+    }
+  }, [isChildActive]);
 
   const handleClick = (e) => {
     if (hasChildren) {
@@ -26,16 +33,15 @@ const NavigationLink = ({
 
   return (
     <li className="w-full">
-      {/* Parent */}
+      {/* PARENT */}
       <Link
         href={route}
         onClick={handleClick}
         className={`
           flex items-center justify-between
-          px-4 py-2 rounded-md text-sm
-          transition-all
+          px-4 py-2 rounded-md text-sm transition-all
           ${
-            isActive || open
+            isParentActive
               ? "bg-[#E0EAFE] text-black"
               : "text-gray-400 hover:bg-gray-800"
           }
@@ -54,22 +60,23 @@ const NavigationLink = ({
           />
         )}
       </Link>
-      
+
+      {/* CHILDREN */}
       {hasChildren && open && (
-        <ul className="mt-2 space-y-3">
+        <ul className="mt-2 space-y-2 pl-2">
           {subMenu.map((item, i) => {
-            const isChildActive = pathname === item.route;
+            const isActiveChild = pathname === item.route;
 
             return (
               <li key={i}>
                 <Link
                   href={item.route}
                   className={`
-                    block px-3 py-3 rounded text-xs
+                    block px-3 py-2 rounded text-xs transition-all
                     ${
-                      isChildActive
+                      isActiveChild
                         ? "bg-[#E0EAFE] text-black"
-                        : "text-gray-400 border hover:text-white"
+                        : "text-gray-400 hover:bg-gray-800"
                     }
                   `}
                 >

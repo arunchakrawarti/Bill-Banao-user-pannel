@@ -1,4 +1,5 @@
 "use client";
+import Button from "@/components/common/Button";
 import Input from "@/components/common/Input";
 
 export default function InvoiceFooterSection() {
@@ -16,10 +17,9 @@ export default function InvoiceFooterSection() {
               options={["HDFC Bank", "ICICI Bank", "Axis Bank"]}
             />
           </div>
-          <button className="h-[45px] rounded-lg 
-          bg-blue-600 px-5 text-white font-medium">
+          <Button variant="danger">
             Add Bank
-          </button>
+          </Button>
         </div>
 
         <Input
