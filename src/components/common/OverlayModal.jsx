@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import gsap from "gsap";
 import { X } from "lucide-react";
+import Button from "./Button";
 
 
 const OverlayModal = ({
@@ -70,13 +71,14 @@ const OverlayModal = ({
         className={`relative w-full ${modalClass ?? "max-w-lg"}`}
       >
         {showCloseIcon && (
-          <button
+          <Button
             onClick={onClose}
-            className="flex justify-center items-center cursor-pointer absolute top-2 right-2 aspect-square h-8 rounded-full p-1 text-gray-600 hover:bg-gray-100"
+           variant="outline"
+           className="bg-white border-none"
             aria-label="Close modal"
           >
             <X size={18} />
-          </button>
+          </Button>
         )}
         {children}
       </div>

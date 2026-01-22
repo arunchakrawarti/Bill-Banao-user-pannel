@@ -1,12 +1,15 @@
 import Badge from "@/components/common/Badge";
 import { MoreActions } from "@/components/atoms/Icons";
+import Input from "@/components/common/Input";
 
 export const clientInvoiceColumns = [
   {
     label: "",
     key: "select",
     render: () => (
-      <input type="checkbox" className="h-4 w-4 rounded border-gray-300" />
+      <Input type="checkbox" 
+      icon="none"
+      className="h-4 w-4 rounded border-gray-300" />
     ),
   },
   { label: "INVOICE NO.", key: "invoiceNo" },

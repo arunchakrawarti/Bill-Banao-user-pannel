@@ -3,6 +3,7 @@ import Heading from "@/components/atoms/Heading";
 import Input from "@/components/common/Input";
 import BasicTable from "@/components/common/BasicTable";
 import InvoiceFooterSection from "./InvoiceFooterSection";
+import Button from "@/components/common/Button";
 
 const productColumns = [
     { label: "Product / Services", key: "name" },
@@ -87,8 +88,8 @@ export default function CreateNewInvoice() {
                     <div>
                         <label className="mb-1 block text-lg">Running</label>
                         <div className="flex gap-3">
-                            <button className="rounded-lg border px-4 py-3">Yes</button>
-                            <button className="rounded-lg border px-4 py-2">No</button>
+                            <Button variant="outline">Yes</Button>
+                            <Button variant="outline">No</Button>
                         </div>
                     </div>
                 </div>

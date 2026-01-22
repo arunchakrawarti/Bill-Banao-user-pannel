@@ -1,3 +1,4 @@
+import Button from "@/components/common/Button";
 import GstEntities from "./GstEntities";
 import GSTSummary from "./GSTSummary";
 
@@ -15,9 +16,13 @@ export default function GSTInfoCard() {
                 Understanding GST Components
               </h2>
             </div>
-            <button className="text-gray-400 hover:text-gray-600 text-xl self-start sm:self-auto">
-              ✕
-            </button>
+            <div
+
+              className="p-2 cursor-pointer rounded-md hover:bg-gray-100 self-start sm:self-auto"
+            >
+              <i className="ri-close-line text-xl text-gray-600 hover:text-gray-900"></i>
+            </div>
+
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
 
@@ -68,7 +73,7 @@ export default function GSTInfoCard() {
         <GstEntities />
         <GSTSummary />
       </div>
-      
+
       <div className="w-full lg:w-[40%]">
         <div className="bg-red-500 rounded-t-2xl shadow border border-gray-300 text-white p-4">
           <div className="flex items-center gap-2">
@@ -104,15 +109,15 @@ export default function GSTInfoCard() {
           </div>
 
           <div className="space-y-2">
-            <button className="w-full border rounded-lg py-2 flex items-center justify-center gap-2 hover:bg-gray-50">
+            <Button variant="outline">
               <i className="ri-download-2-line"></i>
               Download GST Summary (PDF)
-            </button>
+            </Button>
 
-            <button className="w-full border rounded-lg py-2 flex items-center justify-center gap-2 hover:bg-gray-50">
+            <Button variant="outline">
               <i className="ri-download-2-line"></i>
               Download GST Summary (Excel)
-            </button>
+            </Button>
           </div>
 
           <div className="bg-blue-50 border border-blue-200 p-3 rounded-lg text-sm text-blue-700">

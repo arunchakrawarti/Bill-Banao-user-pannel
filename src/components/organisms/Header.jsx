@@ -1,4 +1,5 @@
 "use client";
+import Button from "../common/Button";
 import Input from "../common/Input";
 
 export default function Header({ onMenuClick, title }) {
@@ -6,12 +7,12 @@ export default function Header({ onMenuClick, title }) {
     <header className="sticky top-0 z-40 w-full bg-[#2B7FFF] shadow">
       <div className="flex items-center justify-between px-3 sm:px-4 md:px-6 py-3">
         <div className="flex items-center gap-2 sm:gap-3 w-full max-w-full">
-          <button
+          <Button
             onClick={onMenuClick}
             className="flex h-9 w-9 items-center justify-center rounded-md text-white lg:hidden hover:bg-white/10"
           >
             <i className="ri-menu-2-line text-xl" />
-          </button>
+          </Button>
           <div className="relative w-full max-w-[180px] sm:max-w-[240px] md:max-w-[300px] lg:max-w-[360px]">
             <Input
               placeholder="Search here"

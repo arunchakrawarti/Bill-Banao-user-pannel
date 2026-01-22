@@ -1,6 +1,4 @@
 "use client";
-
-
 import { useEffect, useState, useRef } from "react";
 
 
@@ -123,7 +121,7 @@ export default function CustomSelect({
      >
        <div ref={wrapperRef} className={`relative w-full ${className}`}>
          {/* Select Box */}
-         <button
+         <Button
            type="button"
            disabled={disabled}
            className={`flex h-[45px] w-full items-center justify-between px-3 text-sm ${disabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"}`}
@@ -133,7 +131,7 @@ export default function CustomSelect({
              {selectedLabel}
            </span>
            <span className="text-gray-500">▼</span>
-         </button>
+         </Button>
 
 
          {/* Dropdown */}
@@ -184,62 +182,4 @@ export default function CustomSelect({
    </div>
  );
 }
-
-
-// ✅ HOW TO USE IT
-// 1️⃣ Static Options Example
-
-
-// import CustomSelect from "@/components/CustomSelect";
-
-
-// const staticOptions = [
-//   { label: "India", value: "IN" },
-//   { label: "USA", value: "US" },
-//   { label: "UK", value: "UK" },
-// ];
-
-
-// export default function Page() {
-//   const [country, setCountry] = useState(null);
-
-
-//   return (
-//     <CustomSelect
-//       value={country}
-//       onChange={setCountry}
-//       options={staticOptions}
-//     />
-//   );
-// }
-
-
-//2️⃣ API Search Example
-// async function fetchUsers(query) {
-//   const res = await fetch(`/api/users?search=${query}`);
-//   const data = await res.json();
-//   return data.users; // must return array
-// }
-
-
-// export default function Page() {
-//   const [user, setUser] = useState(null);
-
-
-//   return (
-//     <CustomSelect
-//       value={user}
-//       onChange={setUser}
-//       apiSearch={fetchUsers}
-//       labelKey="name"
-//       valueKey="id"
-//       placeholder="Search user…"
-//renderLabel={(item) => `${item.firstName} ${item.lastName}`}
-
-
-//     />
-//   );
-// }
-
-
 

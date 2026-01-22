@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import Button from "./Button";
 
 
 export default function Pagination({
@@ -12,7 +13,6 @@ export default function Pagination({
     const searchParams = useSearchParams();
     const router = useRouter();
     const pathname = usePathname();
-    //  memoize the value so it doesn't break the dependency array
     const pageNo = useMemo(() => {
         return searchParams.get("page");
     }, [searchParams]);
@@ -84,10 +84,10 @@ export default function Pagination({
     return (
         <div>
             <div className="flex w-fit items-center gap-1">
-                <button
+                <Button variant="outline"
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className="text-navy-dark relative rounded-[6px] p-2 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="text-navy-dark relative rounded-[6px] p-2 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50 border-none"
                     aria-label="Previous page"
                 >
                     <span className="sr-only">Previous page</span>
@@ -105,9 +105,9 @@ export default function Pagination({
                             d="M15 19l-7-7 7-7"
                         />
                     </svg>
-                </button>
+                </Button>
                 {getPageNumbers.map((page, index) => (
-                    <button
+                    <Button  variant="outline"
                         key={index}
                         onClick={() => typeof page === "number" && handlePageChange(page)}
                         disabled={page === "..."}
@@ -118,12 +118,12 @@ export default function Pagination({
                         aria-current={page === currentPage ? "page" : undefined}
                     >
                         {page}
-                    </button>
+                    </Button>
                 ))}
-                <button
+                <Button variant="outline"
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
-                    className="text-navy-dark relative rounded-[6px] p-2 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50"
+                    className="text-navy-dark relative rounded-[6px] p-2 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50 border-none"
                     aria-label="Next page"
                 >
                     <span className="sr-only">Next page</span>
@@ -141,7 +141,7 @@ export default function Pagination({
                             d="M9 5l7 7-7 7"
                         />
                     </svg>
-                </button>
+                </Button>
             </div>
         </div>
     );

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import clsx from "clsx";
+import Button from "../common/Button";
 
 export default function TemplateCard({
   title,
@@ -27,15 +28,15 @@ export default function TemplateCard({
 
       {/* Buttons */}
       <div className="mt-4 flex gap-2">
-        <button
+        <Button
           onClick={onSecondary}
           className="flex flex-1 items-center justify-center gap-2 rounded-lg border border-gray-200 px-3 py-2 text-xs font-medium hover:bg-gray-50"
         >
           <i className="ri-eye-line" />
           {secondaryText}
-        </button>
+        </Button>
 
-        <button
+        <Button
           onClick={onPrimary}
           className={clsx(
             "flex flex-1 items-center justify-center gap-2 rounded-lg px-3 py-2 text-xs font-medium",
@@ -46,7 +47,7 @@ export default function TemplateCard({
         >
           <i className="ri-magic-line" />
           {primaryText}
-        </button>
+        </Button>
       </div>
     </div>
   );
