@@ -19,7 +19,7 @@ export default function AddPurchase() {
             type="select"
             placeholder="Select One"
             options={["Select One", "Pending", "Approved"]}
-            className="border border-gray-200"
+            className="border bg-white border-gray-200"
             icon="none"
           />
         </div>

@@ -38,7 +38,7 @@ const ClientDetails = () => {
 
       <div className="flex flex-col gap-3  sm:flex-row sm:items-center sm:justify-between">
         <div className="w-full sm:w-72">
-          <div className="flex items-center gap-2 rounded-lg border px-3 bg-white">
+          <div className="flex items-center gap-2 rounded-lg border border-gray-300 px-3 bg-white">
             <Input
               placeholder="Search here"
               icon="ri-search-line text-gray-500"
