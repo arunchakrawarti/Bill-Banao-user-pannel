@@ -9,7 +9,7 @@ const variantClasses = {
   danger: "bg-blue-500 text-white",
   secondary:"bg-white text-red-500 border border-red-500",
   tertiary:"bg-green-600 text-white",
-  
+  redcolor:"bg-red-500 text-white"
 
 };
 

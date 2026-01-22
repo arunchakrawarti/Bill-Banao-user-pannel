@@ -29,7 +29,7 @@ export default function Header({ onMenuClick, title }) {
           <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-white">
             <i className="ri-user-line text-[#2B7FFF] text-base sm:text-lg"></i>
           </div>
-          <div className="hidden sm:block leading-tight text-right text-white">
+          <div className="hidden sm:block text-right text-white w-[80px]">
             <p className="text-sm font-normal">John</p>
             <p className="text-xs opacity-90">Tax Consultant</p>
           </div>

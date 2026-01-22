@@ -39,7 +39,7 @@ const NavigationLink = ({
         onClick={handleClick}
         className={`
           flex items-center justify-between
-          px-4 py-2 rounded-md text-sm transition-all
+          px-4 py-2 rounded-md mt-4 text-sm transition-all
           ${
             isParentActive
               ? "bg-[#E0EAFE] text-black"
@@ -63,7 +63,7 @@ const NavigationLink = ({
 
       {/* CHILDREN */}
       {hasChildren && open && (
-        <ul className="mt-2 space-y-2 pl-2">
+        <ul className="mt-2 space-y-2 pl-4">
           {subMenu.map((item, i) => {
             const isActiveChild = pathname === item.route;
 
@@ -72,7 +72,7 @@ const NavigationLink = ({
                 <Link
                   href={item.route}
                   className={`
-                    block px-3 py-2 rounded text-xs transition-all
+                    block px-3 py-3 rounded text-xs transition-all
                     ${
                       isActiveChild
                         ? "bg-[#E0EAFE] text-black"

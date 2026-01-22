@@ -127,7 +127,7 @@ const Information = () => {
         <div className="mt-4 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 items-end">
           <Input label="Branch Name" icon="ri-git-branch-line" placeholder="Enter branch name" className="border border-gray-400"/>
 
-          <Button className="flex h-[53px] items-center gap-2 rounded-lg bg-red-500 px-5 text-sm text-white hover:bg-red-600">
+          <Button variant="redcolor" className="h-[53]">
             <i className="ri-add-line" /> Add Bank
           </Button>
         </div>

@@ -1,6 +1,5 @@
 "use client"
 import React from 'react'
-import Information from '../settings/Information'
 import Heading from '@/components/atoms/Heading'
 import Input from '@/components/common/Input'
 import GSTBillCalculator from './GSTBillCalculator'
